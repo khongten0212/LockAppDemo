@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:gravity="center_horizontal"
+        android:inputType="textPersonName"
+        android:text="@string/input_text_view_password"
+        android:textSize="20dp"/>
+
+    <com.andrognito.patternlockview.PatternLockView
+        android:id="@+id/input_pattern"
+        android:layout_width="330dp"
+        android:layout_height="330dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        app:normalStateColor="@android:color/holo_blue_bright"
+        app:correctStateColor="@android:color/holo_green_light"
+        app:wrongStateColor="@android:color/holo_red_light"/>
+</LinearLayout>

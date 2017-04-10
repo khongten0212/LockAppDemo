@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">LockApp</string>
+    <string name="create_new">New</string>
+    <string name="input_text_view_password">Enter password to continue</string>
+    <string name="login_error">Try again!</string>
+    <string name="button_ok">Next</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="tools_button_ok">OK</string>
+    <string name="tools_button_cancel">Cancel</string>
+    <string name="settings_item_1">Train face recognition</string>
+    <string name="settings_item_1_subtitle">Take picture of you</string>
+    <string name="settings_item_2">Set password</string>
+    <string name="settings_item_2_subtitle">Set password, pin, pattern</string>
+    <string name="settings_item_3">Enable LockApp</string>
+    <string name="settings_item_3_subtitle">Give admin permission to LockApp</string>
+    <string name="toggle_on">On</string>
+    <string name="toggle_off">Off</string>
+    <string name="lock_type_password">Password</string>
+    <string name="lock_type_password_subtitle">Set a regular password</string>
+    <string name="lock_type_pin">Pin</string>
+    <string name="lock_type_pin_subtitle">Set a digit PIN</string>
+    <string name="lock_type_pattern">Pattern</string>
+    <string name="lock_type_pattern_subtitle">Set a pattern</string>
+    <string name="label_select_password_type">Set password / PIN / Pattern</string>
+    <string name="input_prompt">Type in to continue</string>
+    <string name="notification_incorrect">Incorrect, please try again!</string>
+</resources>
