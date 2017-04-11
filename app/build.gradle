@@ -19,6 +19,10 @@ android {
         }
     }
 }
+repositories {
+    // ...
+    maven { url 'https://dl.bintray.com/rvalerio/maven' }
+}
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -32,5 +36,6 @@ dependencies {
     compile 'com.andrognito.patternlockview:patternlockview-reactive:1.0.0'
     compile 'com.android.support:support-v4:25.3.1'
     compile 'com.android.support:support-vector-drawable:25.3.1'
+    compile 'com.rvalerio:fgchecker:1.0.1'
     testCompile 'junit:junit:4.12'
 }

@@ -24,4 +24,5 @@
     <string name="label_select_password_type">Set password / PIN / Pattern</string>
     <string name="input_prompt">Type in to continue</string>
     <string name="notification_incorrect">Incorrect, please try again!</string>
+    <string name="quit_app_notification">Press again to quit!</string>
 </resources>

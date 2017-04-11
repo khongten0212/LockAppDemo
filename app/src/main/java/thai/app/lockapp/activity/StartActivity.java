@@ -14,6 +14,7 @@ import thai.app.lockapp.inputfragment.PatternInputFragment;
 import thai.app.lockapp.inputfragment.PinInputFragment;
 import thai.app.lockapp.interfaces.InputFragmentImplements;
 import thai.app.lockapp.model.LoginToken;
+import thai.app.lockapp.utils.Utils;
 
 import static thai.app.lockapp.model.LoginToken.sLoginToken;
 
@@ -54,6 +55,7 @@ public class StartActivity extends AppCompatActivity implements InputFragmentImp
                         .commit();
             }
         }
+        Utils.initRunningService(this);
     }
 
     @Override
