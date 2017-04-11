@@ -31,6 +31,7 @@ public class MainProgramActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_program);
         getSupportActionBar().setTitle(R.string.app_name);
+        Utils.initRunningService(getApplicationContext());
         mViewItem1 = findViewById(R.id.setting_1);
         mViewItem1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,23 +48,17 @@ public class MainProgramActivity extends AppCompatActivity {
             }
         });
         mSwitch = (Switch) findViewById(R.id.is_app_enabled);
-        mSwitch.setChecked(Utils.isAppEnabled(this));
+        mSwitch.setChecked(Utils.isServiceEnabled(this));
         mViewItem3 = findViewById(R.id.setting_3);
         mViewItem3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                boolean enabled = Utils.isAppEnabled(getApplicationContext());
+//                boolean enabled = Utils.isServiceEnabled(getApplicationContext());
                 boolean enabled = mSwitch.isChecked();
-                if(enabled){
-                    Utils.stopBackgroundService(getApplicationContext());
-                }else{
-                    Utils.startBackgroundService(getApplicationContext());
-                }
                 if (Utils.setAppEnabled(getApplicationContext(), !enabled))
                     mSwitch.setChecked(!enabled);
             }
         });
-        Utils.initRunningService(this);
     }
 
     @Override
