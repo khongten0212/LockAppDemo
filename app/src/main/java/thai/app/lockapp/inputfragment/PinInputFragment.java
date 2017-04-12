@@ -37,7 +37,7 @@ public class PinInputFragment extends InputFragment {
             @Override
             public void onClick(View v) {
                 String pass = mPasswordField.getText().toString();
-                if(mCallback.processInput(pass)){
+                if(mCallback.processInput(null, pass)){
                     mPasswordField.setText("");
                 }
             }

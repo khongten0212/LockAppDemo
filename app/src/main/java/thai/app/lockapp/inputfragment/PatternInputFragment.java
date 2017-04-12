@@ -45,7 +45,7 @@ public class PatternInputFragment extends InputFragment {
                 for (PatternLockView.Dot dot : pattern) {
                     pass += dot.getId();
                 }
-                mCallback.processInput(pass);
+                mCallback.processInput(null, pass);
                 mPatternInput.clearPattern();
             }
 

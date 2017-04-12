@@ -5,5 +5,5 @@ package thai.app.lockapp.interfaces;
  */
 
 public interface InputFragmentImplements {
-    public boolean processInput(String value);
+    public boolean processInput(String value1, String value2);
 }

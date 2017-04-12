@@ -38,7 +38,7 @@ public class PasswordInputFragment extends InputFragment {
             @Override
             public void onClick(View v) {
                 String pass = mPasswordInput.getText().toString();
-                if(mCallback.processInput(pass)){
+                if(mCallback.processInput(null, pass)){
                     mPasswordInput.setText("");
                 }
             }

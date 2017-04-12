@@ -32,6 +32,8 @@ public class StartActivity extends AppCompatActivity implements InputFragmentImp
         Fragment fragment = fm.findFragmentById(R.id.input_fragment_container);
         LoginToken token = new LoginToken(LoginToken.INPUT_PATTERN, "012543678", "012543678");
         LoginToken.saveLoginType(getApplicationContext(), token);
+
+        Utils.setAuthenticated(this, false);
         if (fragment == null) {
             sLoginToken = LoginToken.getSavedLoginType(getApplicationContext());
             if (sLoginToken == null) {
@@ -56,14 +58,14 @@ public class StartActivity extends AppCompatActivity implements InputFragmentImp
                         .commit();
             }
         }
-//        Intent i = new Intent(getApplicationContext(), ForegroundAppCheckerService.class);
-//        startService(i);
-      //  Utils.initRunningService(this);
+        Intent i = new Intent(getApplicationContext(), ForegroundAppCheckerService.class);
+        startService(i);
+//        Utils.initRunningService(this);
     }
 
     @Override
-    public boolean processInput(String value) {
-        if (sLoginToken.getValue2().equals(value)) {
+    public boolean processInput(String value11, String value2) {
+        if (sLoginToken.getValue2().equals(value2)) {
             Intent i = new Intent(getApplicationContext(), MainProgramActivity.class)
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);

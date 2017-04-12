@@ -66,18 +66,18 @@ public class RegisterActivity extends AppCompatActivity implements InputFragment
     }
 
     @Override
-    public boolean processInput(String value) {
+    public boolean processInput(String value1, String value2) {
         if (mCount == 1) {
-            mSavedValue = value;
+            mSavedValue = value2;
             mCount++;
             Toast.makeText(this, "Please confirm password", Toast.LENGTH_LONG).show();
         } else if (mCount == 2) {
-            if(!value.equals(mSavedValue)){
+            if(!value2.equals(mSavedValue)){
                 Toast.makeText(this, "Incorrect", Toast.LENGTH_LONG).show();
             }else{
                 Toast.makeText(this, "Correct", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent();
-                intent.putExtra(TOKEN_TYPE_RETURN, value);
+                intent.putExtra(TOKEN_TYPE_RETURN, value2);
                 setResult(RESULT_OK, intent);
             }
             finish();
