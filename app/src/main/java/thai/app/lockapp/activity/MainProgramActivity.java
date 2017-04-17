@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import thai.app.lockapp.R;
+import thai.app.lockapp.service.ForegroundAppCheckerService;
 import thai.app.lockapp.utils.Utils;
 
 /**
@@ -23,6 +24,7 @@ public class MainProgramActivity extends AppCompatActivity {
     private View mViewItem1;
     private View mViewItem2;
     private View mViewItem3;
+    private View mViewItem4;
     private Switch mSwitch;
     private int mCount = 0;
 
@@ -55,10 +57,21 @@ public class MainProgramActivity extends AppCompatActivity {
             public void onClick(View v) {
 //                boolean enabled = Utils.isServiceEnabled(getApplicationContext());
                 boolean enabled = mSwitch.isChecked();
-                if (Utils.setAppEnabled(getApplicationContext(), !enabled))
-                    mSwitch.setChecked(!enabled);
+                Intent i = new Intent(getApplicationContext(), ForegroundAppCheckerService.class);
+                Utils.startBackgroundService(getApplicationContext());
+                if(enabled){
+                    if(Utils.stopBackgroundService(getApplicationContext())){
+                        mSwitch.setChecked(!enabled);
+                        Utils.setAppEnabled(getApplicationContext(), false);
+                    }
+                }else{
+                    Utils.startBackgroundService(getApplicationContext());
+                    Utils.setAppEnabled(getApplicationContext(), true);
+                    mSwitch.setChecked(true);
+                }
             }
         });
+        mViewItem4 = findViewById(R.id.setting_4);
     }
 
     @Override

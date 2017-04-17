@@ -12,7 +12,9 @@
     <string name="settings_item_2">Set password</string>
     <string name="settings_item_2_subtitle">Set password, pin, pattern</string>
     <string name="settings_item_3">Enable LockApp</string>
-    <string name="settings_item_3_subtitle">Give admin permission to LockApp</string>
+    <string name="settings_item_3_subtitle">Allow LockApp to run</string>
+    <string name="settings_item_4">Select app</string>
+    <string name="settings_item_4_subtitle">Select app to protect</string>
     <string name="toggle_on">On</string>
     <string name="toggle_off">Off</string>
     <string name="lock_type_password">Password</string>

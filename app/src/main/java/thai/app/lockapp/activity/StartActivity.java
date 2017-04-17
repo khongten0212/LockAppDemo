@@ -1,6 +1,8 @@
 package thai.app.lockapp.activity;
 
+import android.content.BroadcastReceiver;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
@@ -8,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import thai.app.lockapp.R;
+import thai.app.lockapp.broadcast.ScreenOnBroadCastReceiver;
 import thai.app.lockapp.inputfragment.InputFragment;
 import thai.app.lockapp.inputfragment.PasswordInputFragment;
 import thai.app.lockapp.inputfragment.PatternInputFragment;
@@ -58,8 +61,12 @@ public class StartActivity extends AppCompatActivity implements InputFragmentImp
                         .commit();
             }
         }
-        Intent i = new Intent(getApplicationContext(), ForegroundAppCheckerService.class);
-        startService(i);
+//        Intent i = new Intent(getApplicationContext(), ForegroundAppCheckerService.class);
+//        startService(i);
+        IntentFilter filter = new IntentFilter(Intent.ACTION_SCREEN_ON);
+        filter.addAction(Intent.ACTION_SCREEN_OFF);
+        BroadcastReceiver mReceiver = new ScreenOnBroadCastReceiver();
+        registerReceiver(mReceiver, filter);
 //        Utils.initRunningService(this);
     }
 
